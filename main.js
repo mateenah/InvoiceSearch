@@ -267,7 +267,7 @@ var DataService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".modal-backdrop {\n    /* position: fixed; */\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    /* z-index: 1040; */\n    /* background-color: #000; */\n}\n.container-fluid h3{\n    color:white;\n    letter-spacing: 0.09em;\n    line-height: 100px;\n    display: inline;\n}\n.container-fluid p{\n    color:white;\n    letter-spacing: 0.09em;\n    line-height: 55px;\n    display: inline;\n}"
+module.exports = ".container-fluid h3{\n    color:white;\n    letter-spacing: 0.09em;\n    line-height: 100px;\n    display: inline;\n}\n.container-fluid p{\n    color:white;\n    letter-spacing: 0.09em;\n    line-height: 55px;\n    display: inline;\n}"
 
 /***/ }),
 
