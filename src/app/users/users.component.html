@@ -1,0 +1,53 @@
+<div class="container" style="margin-top: 10%;">
+  
+  <div class="container-fluid bg-1 text-center">
+      <img src="../assets/logo.png" class="img-responsive img-circle margin" 
+        style="display:inline" alt="Bird" width="80" height="80">
+        <h3 class="margin">speedledger</h3>
+  </div>
+
+    <div class="container-fluid bg-2 text-center">
+          <p>INVOICE FINDER</p>
+      </div>
+
+  
+    <div class="container-fluid text-center">
+      <div class="search-container search-box">
+            <input class="s-box" type="text" placeholder="Search.." name="search" [(ngModel)]="filterInvoice" >
+            <button (click)="myFunction(filterInvoice)" id="s-btn"><i class="material-icons" >
+                search
+            </i></button>
+        </div>
+    </div>
+   
+        
+        
+            <div class="container-fluid bg-4" id="invoiceData" *ngIf="resultObj.invoiceId">
+                <div class="row">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                        <p>
+                            Due Date: {{resultObj.payBy}}
+                    </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p >Price : {{resultObj.totalPrice | currency :"‎kr "}}</p> 
+                    </div>
+                    <div class="col-sm-2 ">
+                        <button class="btn card-link" routerLink="/details/{{resultObj.invoiceId}}" type="button" 
+                          (click)=onSelect()>Details</button>
+                    </div>
+                    <div class="col-sm-2 "></div>
+                </div>
+              
+              </div>
+        
+
+        <div class="container-fluid bg-5 text-center" *ngIf="!resultObj.invoiceId">
+              <div class="container-fluid bg-1">
+                <h3>{{error}}</h3>
+              </div>
+        </div>
+
+</div>

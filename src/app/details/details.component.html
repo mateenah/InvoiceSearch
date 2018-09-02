@@ -1,0 +1,100 @@
+<div class="container-fluid bg-1 text-center">
+        <img src="../assets/logo.png" class="img-responsive img-circle margin" 
+          style="display:inline" alt="Bird" width="80" height="80">
+          <h3 class="margin">speedledger</h3>
+      </div>
+      <div class="container-fluid bg-1 text-center">
+            <p>INVOICE DETAILS</p>
+        </div>
+
+
+<div class="container" *ngIf="users$.invoiceId">
+    <div class="card">
+  <div class="card-header">
+  InvoiceId: 
+  <strong>{{users$.invoiceId}}</strong> 
+    <span class="float-right"> <strong>Account: </strong> {{users$.account}}</span>
+  
+  </div>
+  <div class="card-body">
+  <div class="row mb-4">
+
+            <div class="col-md-4">
+                <h6 class="mb-3">From:</h6>
+                <div>
+                    <strong>{{senderObj.name}}</strong>
+                </div>
+                <div>{{senderObj.street}}</div>
+                <div>{{senderObj.city}}</div>
+                <div>{{senderObj.postalcode}}</div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                    <h6 class="mb-3">To:</h6>
+            <div>
+            <strong>{{receiver.name}}</strong>
+            </div>
+            <div>{{receiver.street}}</div>
+            <div>{{receiver.city}}</div>
+            <div>{{receiver.postalcode}}</div>
+            </div>
+  
+  
+  
+  </div>
+  
+  <div class="table-responsive-sm">
+  <table class="table table-striped">
+  <thead>
+  <tr>
+      <th class="center">#</th>
+      <th>Description</th>
+      <th class="center">Qty</th>
+      <th class="right">VAT</th>
+      <th class="right">Total Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor= "let line of lines;let i = index">
+      <td class="center">{{i+1}}</td>
+      <td class="left">{{ line.description }}</td>
+      <td class="center">{{ line.qty }}</td>
+      <td class="right">{{ line.vat }}</td>
+      <th class="right">{{ line.price }}</th>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-4 col-sm-5">
+  </div>
+  
+  <div class="col-lg-4 col-sm-5 ml-auto">
+  <table class="table table-clear">
+  <tbody>
+  <tr>
+      <td class="left">
+      <strong>Total</strong>
+      </td>
+      <td class="right">{{users$.totalPrice | currency :"‎kr "}}</td>
+  </tr>
+  </tbody>
+  </table>
+  
+  </div>
+  
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  <!-- <div class="container" *ngIf="!users$.invoiceId">
+    <p>Please seach again !!</p>   
+  </div> -->
+  
+  <div class="container-fluid bg-5 text-center" *ngIf="!users$.invoiceId">
+        <div class="container-fluid bg-1">
+          <h3>Please search again !!</h3>
+        </div>
+  </div>
