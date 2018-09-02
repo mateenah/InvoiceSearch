@@ -156,18 +156,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
-/* harmony import */ var _users_users_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./users/users.component */ "./src/app/users/users.component.ts");
-/* harmony import */ var _details_details_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./details/details.component */ "./src/app/details/details.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _users_users_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./users/users.component */ "./src/app/users/users.component.ts");
+/* harmony import */ var _details_details_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./details/details.component */ "./src/app/details/details.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -184,15 +182,14 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_5__["SidebarComponent"],
-                _users_users_component__WEBPACK_IMPORTED_MODULE_6__["UsersComponent"],
-                _details_details_component__WEBPACK_IMPORTED_MODULE_7__["DetailsComponent"]
+                _users_users_component__WEBPACK_IMPORTED_MODULE_5__["UsersComponent"],
+                _details_details_component__WEBPACK_IMPORTED_MODULE_6__["DetailsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
             ],
             providers: [],
@@ -281,7 +278,7 @@ module.exports = ".modal-backdrop {\n    /* position: fixed; */\n    top: 0;\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid bg-1 text-center\">\n        <img src=\"../assets/logo.png\" class=\"img-responsive img-circle margin\" \n          style=\"display:inline\" alt=\"Bird\" width=\"80\" height=\"80\">\n          <h3 class=\"margin\">speedledger</h3>\n      </div>\n      <div class=\"container-fluid bg-1 text-center\">\n            <p>INVOICE DETAILS</p>\n        </div>\n\n\n<div class=\"container\" *ngIf=\"users$.invoiceId\">\n    <div class=\"card\">\n  <div class=\"card-header\">\n  InvoiceId: \n  <strong>{{users$.invoiceId}}</strong> \n    <span class=\"float-right\"> <strong>Account: </strong> {{users$.account}}</span>\n  \n  </div>\n  <div class=\"card-body\">\n  <div class=\"row mb-4\">\n\n            <div class=\"col-md-4\">\n                <h6 class=\"mb-3\">From:</h6>\n                <div>\n                    <strong>{{senderObj.name}}</strong>\n                </div>\n                <div>{{senderObj.street}}</div>\n                <div>{{senderObj.city}}</div>\n                <div>{{senderObj.postalcode}}</div>\n            </div>\n            <div class=\"col-md-4\"></div>\n            <div class=\"col-md-2\">\n                    <h6 class=\"mb-3\">To:</h6>\n            <div>\n            <strong>{{receiver.name}}</strong>\n            </div>\n            <div>{{receiver.street}}</div>\n            <div>{{receiver.city}}</div>\n            <div>{{receiver.postalcode}}</div>\n            </div>\n  \n  \n  \n  </div>\n  \n  <div class=\"table-responsive-sm\">\n  <table class=\"table table-striped\">\n  <thead>\n  <tr>\n      <th class=\"center\">#</th>\n      <th>Description</th>\n      <th class=\"center\">Qty</th>\n      <th class=\"right\">VAT</th>\n      <th class=\"right\">Total Price</th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor= \"let line of lines;let i = index\">\n      <td class=\"center\">{{i+1}}</td>\n      <td class=\"left\">{{ line.description }}</td>\n      <td class=\"center\">{{ line.qty }}</td>\n      <td class=\"right\">{{ line.vat }}</td>\n      <th class=\"right\">{{ line.price }}</th>\n  </tr>\n  </tbody>\n  </table>\n  </div>\n\n  <div class=\"row\">\n  <div class=\"col-lg-4 col-sm-5\">\n  </div>\n  \n  <div class=\"col-lg-4 col-sm-5 ml-auto\">\n  <table class=\"table table-clear\">\n  <tbody>\n  <tr>\n      <td class=\"left\">\n      <strong>Total</strong>\n      </td>\n      <td class=\"right\">{{users$.totalPrice | currency :\"‎kr \"}}</td>\n  </tr>\n  </tbody>\n  </table>\n  \n  </div>\n  \n  </div>\n  \n  </div>\n  </div>\n  </div>\n  <!-- <div class=\"container\" *ngIf=\"!users$.invoiceId\">\n    <p>Please seach again !!</p>   \n  </div> -->\n  \n  <div class=\"container-fluid bg-5 text-center\" *ngIf=\"!users$.invoiceId\">\n        <div class=\"container-fluid bg-1\">\n          <h3>Please search again !!</h3>\n        </div>\n  </div>\n"
+module.exports = "<div class=\"container-fluid bg-1 text-center\">\n        <img src=\"./assets/logo.png\" class=\"img-responsive img-circle margin\" \n          style=\"display:inline\" alt=\"Bird\" width=\"80\" height=\"80\">\n          <h3 class=\"margin\">speedledger</h3>\n      </div>\n      <div class=\"container-fluid bg-1 text-center\">\n            <p>INVOICE DETAILS</p>\n        </div>\n\n\n<div class=\"container\" *ngIf=\"users$.invoiceId\">\n    <div class=\"card\">\n  <div class=\"card-header\">\n  InvoiceId: \n  <strong>{{users$.invoiceId}}</strong> \n    <span class=\"float-right\"> <strong>Account: </strong> {{users$.account}}</span>\n  \n  </div>\n  <div class=\"card-body\">\n  <div class=\"row mb-4\">\n\n            <div class=\"col-md-4\">\n                <h6 class=\"mb-3\">From:</h6>\n                <div>\n                    <strong>{{senderObj.name}}</strong>\n                </div>\n                <div>{{senderObj.street}}</div>\n                <div>{{senderObj.city}}</div>\n                <div>{{senderObj.postalcode}}</div>\n            </div>\n            <div class=\"col-md-4\"></div>\n            <div class=\"col-md-2\">\n                    <h6 class=\"mb-3\">To:</h6>\n            <div>\n            <strong>{{receiver.name}}</strong>\n            </div>\n            <div>{{receiver.street}}</div>\n            <div>{{receiver.city}}</div>\n            <div>{{receiver.postalcode}}</div>\n            </div>\n  \n  \n  \n  </div>\n  \n  <div class=\"table-responsive-sm\">\n  <table class=\"table table-striped\">\n  <thead>\n  <tr>\n      <th class=\"center\">#</th>\n      <th>Description</th>\n      <th class=\"center\">Qty</th>\n      <th class=\"right\">VAT</th>\n      <th class=\"right\">Total Price</th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor= \"let line of lines;let i = index\">\n      <td class=\"center\">{{i+1}}</td>\n      <td class=\"left\">{{ line.description }}</td>\n      <td class=\"center\">{{ line.qty }}</td>\n      <td class=\"right\">{{ line.vat }}</td>\n      <th class=\"right\">{{ line.price }}</th>\n  </tr>\n  </tbody>\n  </table>\n  </div>\n\n  <div class=\"row\">\n  <div class=\"col-lg-4 col-sm-5\">\n  </div>\n  \n  <div class=\"col-lg-4 col-sm-5 ml-auto\">\n  <table class=\"table table-clear\">\n  <tbody>\n  <tr>\n      <td class=\"left\">\n      <strong>Total</strong>\n      </td>\n      <td class=\"right\">{{users$.totalPrice | currency :\"‎kr \"}}</td>\n  </tr>\n  </tbody>\n  </table>\n  \n  </div>\n  \n  </div>\n  \n  </div>\n  </div>\n  </div>\n  <!-- <div class=\"container\" *ngIf=\"!users$.invoiceId\">\n    <p>Please seach again !!</p>   \n  </div> -->\n  \n  <div class=\"container-fluid bg-5 text-center\" *ngIf=\"!users$.invoiceId\">\n        <div class=\"container-fluid bg-1\">\n          <h3>Please search again !!</h3>\n        </div>\n  </div>\n"
 
 /***/ }),
 
@@ -347,74 +344,6 @@ var DetailsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/sidebar/sidebar.component.css":
-/*!***********************************************!*\
-  !*** ./src/app/sidebar/sidebar.component.css ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "nav {\n    background: #2d2e2e;\n    height: 100%;\n  }\n  nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0;\n  }\n  nav ul li a {\n    color: #fff;\n    padding: 20px;\n    display: block;\n  }\n  nav ul li .activated {\n    background-color: #00a8ff;\n  }\n  "
-
-/***/ }),
-
-/***/ "./src/app/sidebar/sidebar.component.html":
-/*!************************************************!*\
-  !*** ./src/app/sidebar/sidebar.component.html ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!-- <nav>\n  <ul>\n    <li>\n      <a routerLink=\"\" [class.activated]=\"currentUrl == '/'\">\n        <i class=\"material-icons\">supervised_user_circle</i>\n      </a>\n    </li>\n    <li>\n        <a routerLink=\"details\" [class.activated]=\"currentUrl == '/details'\">\n          <i class=\"material-icons\">message</i>\n        </a>\n      </li>\n  </ul>\n</nav> -->"
-
-/***/ }),
-
-/***/ "./src/app/sidebar/sidebar.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/sidebar/sidebar.component.ts ***!
-  \**********************************************/
-/*! exports provided: SidebarComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent(router) {
-        var _this = this;
-        this.router = router;
-        router.events.subscribe(function (_) { return _this.currentUrl = _this.router.url; });
-    }
-    SidebarComponent.prototype.ngOnInit = function () {
-    };
-    SidebarComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-sidebar',
-            template: __webpack_require__(/*! ./sidebar.component.html */ "./src/app/sidebar/sidebar.component.html"),
-            styles: [__webpack_require__(/*! ./sidebar.component.css */ "./src/app/sidebar/sidebar.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
-    ], SidebarComponent);
-    return SidebarComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/users/users.component.css":
 /*!*******************************************!*\
   !*** ./src/app/users/users.component.css ***!
@@ -433,7 +362,7 @@ module.exports = ".responsive {\n    width: 100%;\n    max-width: 400px;\n    he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top: 10%;\">\n  \n  <div class=\"container-fluid bg-1 text-center\">\n      <img src=\"../assets/logo.png\" class=\"img-responsive img-circle margin\" \n        style=\"display:inline\" alt=\"Bird\" width=\"80\" height=\"80\">\n        <h3 class=\"margin\">speedledger</h3>\n  </div>\n\n    <div class=\"container-fluid bg-2 text-center\">\n          <p>INVOICE FINDER</p>\n      </div>\n\n  \n    <div class=\"container-fluid text-center\">\n      <div class=\"search-container search-box\">\n            <input class=\"s-box\" type=\"text\" placeholder=\"Search..\" name=\"search\" [(ngModel)]=\"filterInvoice\" >\n            <button (click)=\"myFunction(filterInvoice)\" id=\"s-btn\"><i class=\"material-icons\" >\n                search\n            </i></button>\n        </div>\n    </div>\n   \n        \n        \n            <div class=\"container-fluid bg-4\" id=\"invoiceData\" *ngIf=\"resultObj.invoiceId\">\n                <div class=\"row\">\n                    <div class=\"col-sm-2\">\n                    </div>\n                    <div class=\"col-sm-2\">\n                        <p>\n                            Due Date: {{resultObj.payBy}}\n                    </p>\n                    </div>\n                    <div class=\"col-sm-2\">\n                        <p >Price : {{resultObj.totalPrice | currency :\"‎kr \"}}</p> \n                    </div>\n                    <div class=\"col-sm-2 \">\n                        <button class=\"btn card-link\" routerLink=\"/details/{{resultObj.invoiceId}}\" type=\"button\" \n                          (click)=onSelect()>Details</button>\n                    </div>\n                    <div class=\"col-sm-2 \"></div>\n                </div>\n              \n              </div>\n        \n\n        <div class=\"container-fluid bg-5 text-center\" *ngIf=\"!resultObj.invoiceId\">\n              <div class=\"container-fluid bg-1\">\n                <h3>{{error}}</h3>\n              </div>\n        </div>\n\n</div>"
+module.exports = "<div class=\"container\" style=\"margin-top: 10%;\">\n  \n  <div class=\"container-fluid bg-1 text-center\">\n      <img src=\"./assets/logo.png\" class=\"img-responsive img-circle margin\" \n        style=\"display:inline\" alt=\"Bird\" width=\"80\" height=\"80\">\n        <h3 class=\"margin\">speedledger</h3>\n  </div>\n\n    <div class=\"container-fluid bg-2 text-center\">\n          <p>INVOICE FINDER</p>\n      </div>\n\n  \n    <div class=\"container-fluid text-center\">\n      <div class=\"search-container search-box\">\n            <input class=\"s-box\" type=\"text\" placeholder=\"Search..\" name=\"search\" [(ngModel)]=\"filterInvoice\" >\n            <button (click)=\"myFunction(filterInvoice)\" id=\"s-btn\"><i class=\"material-icons\" >\n                search\n            </i></button>\n        </div>\n    </div>\n   \n        \n        \n            <div class=\"container-fluid bg-4\" id=\"invoiceData\" *ngIf=\"resultObj.invoiceId\">\n                <div class=\"row\">\n                    <div class=\"col-sm-2\">\n                    </div>\n                    <div class=\"col-sm-2\">\n                        <p>\n                            Due Date: {{resultObj.payBy}}\n                    </p>\n                    </div>\n                    <div class=\"col-sm-2\">\n                        <p >Price : {{resultObj.totalPrice | currency :\"‎kr \"}}</p> \n                    </div>\n                    <div class=\"col-sm-2 \">\n                        <button class=\"btn card-link\" routerLink=\"/details/{{resultObj.invoiceId}}\" type=\"button\" \n                          (click)=onSelect()>Details</button>\n                    </div>\n                    <div class=\"col-sm-2 \"></div>\n                </div>\n              \n              </div>\n        \n\n        <div class=\"container-fluid bg-5 text-center\" *ngIf=\"!resultObj.invoiceId\">\n              <div class=\"container-fluid bg-1\">\n                <h3>{{error}}</h3>\n              </div>\n        </div>\n\n</div>"
 
 /***/ }),
 
