@@ -14,23 +14,22 @@ export class DataService {
   currentMessage = this.messageSource.asObservable();
 
   public users$ = []
-  public resultObj ={}
-  public senderObj ={}
-  public receiver ={}
-  public lines =[]
-
+  public resultObj = {}
+  public senderObj = {}
+  public receiver = {}
+  public lines = []
   public vhd = <IUserList[]>{}
+
   constructor(private _http: HttpClient) { }
 
-
-  getInvoices():Observable<IUserList[]>{
-    return this._http.get<IUserList[]>('https://raw.githubusercontent.com/mateenah/json/master/db.json')
-                 
+  getInvoices(): Observable<IUserList[]> {
+    return this._http.get<IUserList[]>
+            ('https://raw.githubusercontent.com/mateenah/json/master/db.json')
   }
 
-
-  changeMessage(message:{}){
+  changeMessage(message: {}) {
     this.messageSource.next(message);
-          console.log("resultObj" +this.messageSource);
+    console.log("resultObj" + this.messageSource);
+  }
   
-  }}
+}

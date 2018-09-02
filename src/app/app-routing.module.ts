@@ -6,7 +6,7 @@ import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: UsersComponent
   },
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: '**' ,
+    path: '**',
     component: UsersComponent
   }
 ]
@@ -27,4 +27,5 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
+
 export class AppRoutingModule { }
